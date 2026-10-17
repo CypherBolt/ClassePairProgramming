@@ -31,6 +31,14 @@ class bullett:
     def draw(self):
         screen.draw.filled_circle((self.bulletposx,self.bulletposy),circlerad,(255,255,255))
 
+def add_bullett():
+    if len(objs) > 1:
+        try:
+            for x in range(len(objs)):
+                objs[x].update()
+        except:
+            pass
+
 def on_mouse_down(pos):
     bulletposx = pos[0]
     bulletposy = pos[1]
@@ -52,12 +60,7 @@ def draw():
             pass
 
 def update():
-    if len(objs) > 1:
-        try:
-            for x in range(len(objs)):
-                objs[x].update()
-        except:
-            pass
+    add_bullett()
     add_Target()
     draw()
 
