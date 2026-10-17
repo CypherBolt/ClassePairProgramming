@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 targets = []
 class Target:
@@ -14,7 +13,6 @@ def add_Target():
 
         
 
-=======
 import pgzrun
 
 HEIGHT = 600
@@ -60,4 +58,3 @@ def update():
     draw()
 
 pgzrun.go()
->>>>>>> 095efcb494cbe8100bb73584d22b1db11e3aa28e
