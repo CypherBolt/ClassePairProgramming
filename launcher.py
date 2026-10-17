@@ -7,11 +7,6 @@ circlerad = 20
 objs = []
 targets = []
 
-
-import random
-
-targets = []
-
 class Target:
     def __init__(self):
         self.x = random.randint(50, WIDTH - 50)
@@ -33,11 +28,11 @@ class bullett:
     def __init__(self,bulletposx,bullettposy):
         self.bulletposx = bulletposx
         self.bulletposy = bullettposy
-        self.velocity = 2
+        self.velocity = 10
 
     def update(self):
-        self.bulletposx = self.bulletposx + self.velocity
-        if self.bulletposx > WIDTH + circlerad:
+        self.bulletposy = self.bulletposy - self.velocity
+        if self.bulletposy > HEIGHT + circlerad:
             objs.remove(self)
 
     def draw(self):
