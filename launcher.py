@@ -1,16 +1,23 @@
 import random
+import pgzrun
+
+HEIGHT = 600
+WIDTH = 800
+circlerad = 20
+objs = []
 targets = []
+
 class Target:
     def __init__(self):
         self.x = random.randint(50, WIDTH-50)
         self.y = random.randint(50, HEIGHT-150)
     def draw(self):
-            screen.draw.filled_circle((self.x, self.y),20, "red")
-     
-     
+        screen.draw.filled_circle((self.x, self.y),20, "red")
+
 def add_Target():
  targets.append(Target())
 
+<<<<<<< HEAD
         
 
 import pgzrun
@@ -20,6 +27,8 @@ WIDTH = 800
 circlerad = 20
 objs = []
 
+=======
+>>>>>>> 672b68383e09b25257771de3c8acb536f16ddd88
 class bullett:
     def __init__(self,bulletposx,bullettposy):
         self.bulletposx = bulletposx
@@ -47,6 +56,12 @@ def draw():
                 objs[x].draw()
         except:
             pass
+    if len(targets) > 1:
+        try:
+            for x in range(len(targets)):
+                targets[x].draw()
+        except:
+            pass
 
 def update():
     if len(objs) > 1:
@@ -55,6 +70,11 @@ def update():
                 objs[x].update()
         except:
             pass
+    add_Target()
     draw()
 
+<<<<<<< HEAD
 pgzrun.go()
+=======
+pgzrun.go()
+>>>>>>> 672b68383e09b25257771de3c8acb536f16ddd88
