@@ -14,7 +14,7 @@ def draw():
     screen.clear()
     screen.draw.filled_circle((bulletX,bulletY),10,"white")
     screen.draw.filled_circle((mouseX,mouseY),20,"green")
-  
+
 
 def update():
     global bulletX, bulletY, firing, yVel
