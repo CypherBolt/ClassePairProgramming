@@ -10,19 +10,16 @@ targets = []
 class Target:
     def __init__(self):
         self.x = random.randint(50, WIDTH - 50)
-        self.y = random.randint(50, HEIGHT - 150)
+        self.y = random.randint(50, int(HEIGHT - 300))
 
     def draw(self):
         screen.draw.filled_circle((self.x, self.y), 20, "red")
-
 
 def add_Target():
     if len(targets) < 5:
         targets.append(Target())
 
-
 clock.schedule_interval(add_Target, 5.0)
-
 
 class bullett:
     def __init__(self,bulletposx,bullettposy):
@@ -71,5 +68,4 @@ def update():
     add_Target()
     draw()
 
-pgzrun.go()
 pgzrun.go()
