@@ -93,8 +93,8 @@ def on_mouse_down(button):
             dx = mouseX-playerX
             dy = mouseY-playerY
             distance = math.hypot(dx, dy)  #avoid dividing by zero
-            bulletVelX = dx / distance*speed
-            bulletVelY = dy / distance*speed
+            bulletVelX = dx/distance*speed
+            bulletVelY = dy/distance*speed
 
 
 pgzrun.go()
