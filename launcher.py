@@ -32,10 +32,19 @@ clock.schedule_interval(tick, 1.0) #one "tick" happens every sec
 #points
 score  = 0
 
+targets = [] #create an empty list to add targets to
+def create_target():
+    x = random.randint(50, WIDTH-50)
+    y = random.randint(50, HEIGHT - 50)
+    targets.append((x,y))
+clock.schedule_interval(create_target, 1.5) #new target every 1.5 sec
+
 def draw():
     screen.clear()
     screen.draw.filled_circle((bulletX,bulletY),10,"white")
     screen.draw.filled_circle((playerX,playerY),20,"green")
+    for target in targets:
+        screen.draw.filled_circle(target, 15, "red")
     screen.draw.text(f"Score: {score}", (10, 10), color = "white")
     screen.draw.text(f"Time: {time_remaining}", (10, 40), color = "white")
 
@@ -62,6 +71,14 @@ def update():
         playerY -= 5
     if keyboard.down:
         playerY += 5
+
+    if firing:
+        for target in targets[:]: 
+            tx, ty = target
+            distance = ((bulletX - tx)**2 + (bulletY - ty)**2)**0.5
+            if distance < 25:
+                targets.remove(target)
+                score += 10
 
 def on_mouse_move(pos):
     global mouseX, mouseY
