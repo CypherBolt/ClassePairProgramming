@@ -1,5 +1,4 @@
 import pgzrun
-import random #for generating the targets in random positions
 import math
 
 WIDTH = 1000
